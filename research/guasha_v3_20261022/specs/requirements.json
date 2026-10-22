@@ -1,0 +1,1190 @@
+{
+  "schema_version": "3.0",
+  "date": "2026-10-22",
+  "mode": "OFFLINE_ONLY",
+  "mandatory_count": 68,
+  "required_modules": [
+    "M00",
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14",
+    "M15",
+    "M16"
+  ],
+  "requirements": [
+    {
+      "id": "M00-R01",
+      "module": "M00",
+      "module_name": "离线RGB-D读取及证据元数据",
+      "priority": "MUST",
+      "description": "正常RGB-D可加载并回投影",
+      "expected_artifact": "FrameBundle和DataQuality",
+      "critical_failure": "缺单位/缺对齐信息/无效深度不默许通过",
+      "research_refs": [
+        "R08",
+        "R10",
+        "R11",
+        "R21",
+        "R23"
+      ],
+      "verification_test_id": "T-M00-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M00-R02",
+      "module": "M00",
+      "module_name": "离线RGB-D读取及证据元数据",
+      "priority": "MUST",
+      "description": "缺深度单位拒绝",
+      "expected_artifact": "FrameBundle和DataQuality",
+      "critical_failure": "缺单位/缺对齐信息/无效深度不默许通过",
+      "research_refs": [
+        "R08",
+        "R10",
+        "R11",
+        "R21",
+        "R23"
+      ],
+      "verification_test_id": "T-M00-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M00-R03",
+      "module": "M00",
+      "module_name": "离线RGB-D读取及证据元数据",
+      "priority": "MUST",
+      "description": "未注册且同尺寸拒绝",
+      "expected_artifact": "FrameBundle和DataQuality",
+      "critical_failure": "缺单位/缺对齐信息/无效深度不默许通过",
+      "research_refs": [
+        "R08",
+        "R10",
+        "R11",
+        "R21",
+        "R23"
+      ],
+      "verification_test_id": "T-M00-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M00-R04",
+      "module": "M00",
+      "module_name": "离线RGB-D读取及证据元数据",
+      "priority": "MUST",
+      "description": "时钟乱序拒绝",
+      "expected_artifact": "FrameBundle和DataQuality",
+      "critical_failure": "缺单位/缺对齐信息/无效深度不默许通过",
+      "research_refs": [
+        "R08",
+        "R10",
+        "R11",
+        "R21",
+        "R23"
+      ],
+      "verification_test_id": "T-M00-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M01-R01",
+      "module": "M01",
+      "module_name": "合成手眼/工具/F-T外参与坐标变换",
+      "priority": "MUST",
+      "description": "随机SE3组合与逆可恢复",
+      "expected_artifact": "TransformGraph和独立外部验证",
+      "critical_failure": "缺少变换链或真实标定时不得冒充base_link",
+      "research_refs": [
+        "R08",
+        "R09",
+        "R21",
+        "R22"
+      ],
+      "verification_test_id": "T-M01-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M01-R02",
+      "module": "M01",
+      "module_name": "合成手眼/工具/F-T外参与坐标变换",
+      "priority": "MUST",
+      "description": "合成AX=XB在留出姿态通过",
+      "expected_artifact": "TransformGraph和独立外部验证",
+      "critical_failure": "缺少变换链或真实标定时不得冒充base_link",
+      "research_refs": [
+        "R08",
+        "R09",
+        "R21",
+        "R22"
+      ],
+      "verification_test_id": "T-M01-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M01-R03",
+      "module": "M01",
+      "module_name": "合成手眼/工具/F-T外参与坐标变换",
+      "priority": "MUST",
+      "description": "坏旋转矩阵拒绝",
+      "expected_artifact": "TransformGraph和独立外部验证",
+      "critical_failure": "缺少变换链或真实标定时不得冒充base_link",
+      "research_refs": [
+        "R08",
+        "R09",
+        "R21",
+        "R22"
+      ],
+      "verification_test_id": "T-M01-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M01-R04",
+      "module": "M01",
+      "module_name": "合成手眼/工具/F-T外参与坐标变换",
+      "priority": "MUST",
+      "description": "真实基坐标无标定拒绝",
+      "expected_artifact": "TransformGraph和独立外部验证",
+      "critical_failure": "缺少变换链或真实标定时不得冒充base_link",
+      "research_refs": [
+        "R08",
+        "R09",
+        "R21",
+        "R22"
+      ],
+      "verification_test_id": "T-M01-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M02-R01",
+      "module": "M02",
+      "module_name": "深度回投影和局部PCA/二次曲面",
+      "priority": "MUST",
+      "description": "平面法线解析匹配",
+      "expected_artifact": "SurfacePatch、法向和质量",
+      "critical_failure": "深度边界、法线退化与法向翻转",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R15",
+        "R16"
+      ],
+      "verification_test_id": "T-M02-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M02-R02",
+      "module": "M02",
+      "module_name": "深度回投影和局部PCA/二次曲面",
+      "priority": "MUST",
+      "description": "球面法向合成真值检查",
+      "expected_artifact": "SurfacePatch、法向和质量",
+      "critical_failure": "深度边界、法线退化与法向翻转",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R15",
+        "R16"
+      ],
+      "verification_test_id": "T-M02-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M02-R03",
+      "module": "M02",
+      "module_name": "深度回投影和局部PCA/二次曲面",
+      "priority": "MUST",
+      "description": "共线邻域拒绝",
+      "expected_artifact": "SurfacePatch、法向和质量",
+      "critical_failure": "深度边界、法线退化与法向翻转",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R15",
+        "R16"
+      ],
+      "verification_test_id": "T-M02-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M02-R04",
+      "module": "M02",
+      "module_name": "深度回投影和局部PCA/二次曲面",
+      "priority": "MUST",
+      "description": "法向朝向不随机翻转",
+      "expected_artifact": "SurfacePatch、法向和质量",
+      "critical_failure": "深度边界、法线退化与法向翻转",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R15",
+        "R16"
+      ],
+      "verification_test_id": "T-M02-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M03-R01",
+      "module": "M03",
+      "module_name": "M1顺序点击路径",
+      "priority": "MUST",
+      "description": "M1点序保持",
+      "expected_artifact": "有序3D线及用户审核状态",
+      "critical_failure": "路径断层、重复点、顺序错乱",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R18"
+      ],
+      "verification_test_id": "T-M03-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M03-R02",
+      "module": "M03",
+      "module_name": "M1顺序点击路径",
+      "priority": "MUST",
+      "description": "曲面路径不穿过球/圆柱",
+      "expected_artifact": "有序3D线及用户审核状态",
+      "critical_failure": "路径断层、重复点、顺序错乱",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R18"
+      ],
+      "verification_test_id": "T-M03-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M03-R03",
+      "module": "M03",
+      "module_name": "M1顺序点击路径",
+      "priority": "MUST",
+      "description": "中间深度洞阻断",
+      "expected_artifact": "有序3D线及用户审核状态",
+      "critical_failure": "路径断层、重复点、顺序错乱",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R18"
+      ],
+      "verification_test_id": "T-M03-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M03-R04",
+      "module": "M03",
+      "module_name": "M1顺序点击路径",
+      "priority": "MUST",
+      "description": "撤销/反向结果稳定",
+      "expected_artifact": "有序3D线及用户审核状态",
+      "critical_failure": "路径断层、重复点、顺序错乱",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R18"
+      ],
+      "verification_test_id": "T-M03-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M04-R01",
+      "module": "M04",
+      "module_name": "M2屏幕画线",
+      "priority": "MUST",
+      "description": "画布变换和裁剪正确",
+      "expected_artifact": "保序stroke→像素→3D线",
+      "critical_failure": "Canvas像素映射、交叉、笔迹断裂、多stroke",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R12",
+        "R18"
+      ],
+      "verification_test_id": "T-M04-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M04-R02",
+      "module": "M04",
+      "module_name": "M2屏幕画线",
+      "priority": "MUST",
+      "description": "笔迹顺序真实保留",
+      "expected_artifact": "保序stroke→像素→3D线",
+      "critical_failure": "Canvas像素映射、交叉、笔迹断裂、多stroke",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R12",
+        "R18"
+      ],
+      "verification_test_id": "T-M04-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M04-R03",
+      "module": "M04",
+      "module_name": "M2屏幕画线",
+      "priority": "MUST",
+      "description": "双stroke不自动连接",
+      "expected_artifact": "保序stroke→像素→3D线",
+      "critical_failure": "Canvas像素映射、交叉、笔迹断裂、多stroke",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R12",
+        "R18"
+      ],
+      "verification_test_id": "T-M04-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M04-R04",
+      "module": "M04",
+      "module_name": "M2屏幕画线",
+      "priority": "MUST",
+      "description": "自交和瞬移可诊断",
+      "expected_artifact": "保序stroke→像素→3D线",
+      "critical_failure": "Canvas像素映射、交叉、笔迹断裂、多stroke",
+      "research_refs": [
+        "R01",
+        "R11",
+        "R12",
+        "R18"
+      ],
+      "verification_test_id": "T-M04-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M05-R01",
+      "module": "M05",
+      "module_name": "M3候选点及S1/S2模板图规划",
+      "priority": "MUST",
+      "description": "Dijkstra和手算最短路一致",
+      "expected_artifact": "候选语义图及Dijkstra线路",
+      "critical_failure": "图不通、候选不确定、路线未批准",
+      "research_refs": [
+        "AUTO-R01"
+      ],
+      "verification_test_id": "T-M05-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M05-R02",
+      "module": "M05",
+      "module_name": "M3候选点及S1/S2模板图规划",
+      "priority": "MUST",
+      "description": "S1选点并审核",
+      "expected_artifact": "候选语义图及Dijkstra线路",
+      "critical_failure": "图不通、候选不确定、路线未批准",
+      "research_refs": [
+        "AUTO-R01"
+      ],
+      "verification_test_id": "T-M05-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M05-R03",
+      "module": "M05",
+      "module_name": "M3候选点及S1/S2模板图规划",
+      "priority": "MUST",
+      "description": "S2模板多路线可生成",
+      "expected_artifact": "候选语义图及Dijkstra线路",
+      "critical_failure": "图不通、候选不确定、路线未批准",
+      "research_refs": [
+        "AUTO-R01"
+      ],
+      "verification_test_id": "T-M05-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M05-R04",
+      "module": "M05",
+      "module_name": "M3候选点及S1/S2模板图规划",
+      "priority": "MUST",
+      "description": "禁区/断边找不到路会拒绝",
+      "expected_artifact": "候选语义图及Dijkstra线路",
+      "critical_failure": "图不通、候选不确定、路线未批准",
+      "research_refs": [
+        "AUTO-R01"
+      ],
+      "verification_test_id": "T-M05-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M06-R01",
+      "module": "M06",
+      "module_name": "统一曲面路径及弧长重采样",
+      "priority": "MUST",
+      "description": "统一路径schema覆盖三入口",
+      "expected_artifact": "SurfacePath及连续性证书",
+      "critical_failure": "缺洞穿越、离面平滑、法向跳跃",
+      "research_refs": [
+        "R02",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M06-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M06-R02",
+      "module": "M06",
+      "module_name": "统一曲面路径及弧长重采样",
+      "priority": "MUST",
+      "description": "最坏连续缺测区间门控",
+      "expected_artifact": "SurfacePath及连续性证书",
+      "critical_failure": "缺洞穿越、离面平滑、法向跳跃",
+      "research_refs": [
+        "R02",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M06-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M06-R03",
+      "module": "M06",
+      "module_name": "统一曲面路径及弧长重采样",
+      "priority": "MUST",
+      "description": "平滑不离观测表面",
+      "expected_artifact": "SurfacePath及连续性证书",
+      "critical_failure": "缺洞穿越、离面平滑、法向跳跃",
+      "research_refs": [
+        "R02",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M06-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M06-R04",
+      "module": "M06",
+      "module_name": "统一曲面路径及弧长重采样",
+      "priority": "MUST",
+      "description": "3D弧长采样近似均匀",
+      "expected_artifact": "SurfacePath及连续性证书",
+      "critical_failure": "缺洞穿越、离面平滑、法向跳跃",
+      "research_refs": [
+        "R02",
+        "R18",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M06-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M07-R01",
+      "module": "M07",
+      "module_name": "有限宽刮板姿态及扫掠",
+      "priority": "MUST",
+      "description": "两侧边缘越界拒绝",
+      "expected_artifact": "ToolPlan，横向边缘审核",
+      "critical_failure": "中心线通过但边缘失败、端点通过中间碰撞",
+      "research_refs": [
+        "R04",
+        "R05",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M07-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M07-R02",
+      "module": "M07",
+      "module_name": "有限宽刮板姿态及扫掠",
+      "priority": "MUST",
+      "description": "端点安全但中间障碍拒绝",
+      "expected_artifact": "ToolPlan，横向边缘审核",
+      "critical_failure": "中心线通过但边缘失败、端点通过中间碰撞",
+      "research_refs": [
+        "R04",
+        "R05",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M07-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M07-R03",
+      "module": "M07",
+      "module_name": "有限宽刮板姿态及扫掠",
+      "priority": "MUST",
+      "description": "姿态三轴正交右手",
+      "expected_artifact": "ToolPlan，横向边缘审核",
+      "critical_failure": "中心线通过但边缘失败、端点通过中间碰撞",
+      "research_refs": [
+        "R04",
+        "R05",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M07-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M07-R04",
+      "module": "M07",
+      "module_name": "有限宽刮板姿态及扫掠",
+      "priority": "MUST",
+      "description": "缺工具尺寸拒绝实值证书",
+      "expected_artifact": "ToolPlan，横向边缘审核",
+      "critical_failure": "中心线通过但边缘失败、端点通过中间碰撞",
+      "research_refs": [
+        "R04",
+        "R05",
+        "R19",
+        "R20"
+      ],
+      "verification_test_id": "T-M07-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M08-R01",
+      "module": "M08",
+      "module_name": "纯离线运动学和轨迹时间参数化",
+      "priority": "MUST",
+      "description": "虚拟模型正逆解重建",
+      "expected_artifact": "合成演示臂/已授权模型的虚拟TCP序列",
+      "critical_failure": "未经核验FR5模型不得称FR5可达",
+      "research_refs": [
+        "R04",
+        "R20"
+      ],
+      "verification_test_id": "T-M08-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M08-R02",
+      "module": "M08",
+      "module_name": "纯离线运动学和轨迹时间参数化",
+      "priority": "MUST",
+      "description": "速度加速度样例上界验证",
+      "expected_artifact": "合成演示臂/已授权模型的虚拟TCP序列",
+      "critical_failure": "未经核验FR5模型不得称FR5可达",
+      "research_refs": [
+        "R04",
+        "R20"
+      ],
+      "verification_test_id": "T-M08-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M08-R03",
+      "module": "M08",
+      "module_name": "纯离线运动学和轨迹时间参数化",
+      "priority": "MUST",
+      "description": "四元数无突变",
+      "expected_artifact": "合成演示臂/已授权模型的虚拟TCP序列",
+      "critical_failure": "未经核验FR5模型不得称FR5可达",
+      "research_refs": [
+        "R04",
+        "R20"
+      ],
+      "verification_test_id": "T-M08-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M08-R04",
+      "module": "M08",
+      "module_name": "纯离线运动学和轨迹时间参数化",
+      "priority": "MUST",
+      "description": "无授权FR5模型明确阻断",
+      "expected_artifact": "合成演示臂/已授权模型的虚拟TCP序列",
+      "critical_failure": "未经核验FR5模型不得称FR5可达",
+      "research_refs": [
+        "R04",
+        "R20"
+      ],
+      "verification_test_id": "T-M08-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M09-R01",
+      "module": "M09",
+      "module_name": "离线虚拟六维F/T及力矩转换",
+      "priority": "MUST",
+      "description": "原点平移r×F力矩数值已知",
+      "expected_artifact": "SensorWrench，真值分离",
+      "critical_failure": "力矩平移遗漏/时间过期/偏置未补偿",
+      "research_refs": [
+        "R06",
+        "R08",
+        "R09"
+      ],
+      "verification_test_id": "T-M09-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M09-R02",
+      "module": "M09",
+      "module_name": "离线虚拟六维F/T及力矩转换",
+      "priority": "MUST",
+      "description": "姿态旋转方向验证",
+      "expected_artifact": "SensorWrench，真值分离",
+      "critical_failure": "力矩平移遗漏/时间过期/偏置未补偿",
+      "research_refs": [
+        "R06",
+        "R08",
+        "R09"
+      ],
+      "verification_test_id": "T-M09-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M09-R03",
+      "module": "M09",
+      "module_name": "离线虚拟六维F/T及力矩转换",
+      "priority": "MUST",
+      "description": "零偏+重力补偿对比",
+      "expected_artifact": "SensorWrench，真值分离",
+      "critical_failure": "力矩平移遗漏/时间过期/偏置未补偿",
+      "research_refs": [
+        "R06",
+        "R08",
+        "R09"
+      ],
+      "verification_test_id": "T-M09-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M09-R04",
+      "module": "M09",
+      "module_name": "离线虚拟六维F/T及力矩转换",
+      "priority": "MUST",
+      "description": "延迟时力觉失效",
+      "expected_artifact": "SensorWrench，真值分离",
+      "critical_failure": "力矩平移遗漏/时间过期/偏置未补偿",
+      "research_refs": [
+        "R06",
+        "R08",
+        "R09"
+      ],
+      "verification_test_id": "T-M09-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M10-R01",
+      "module": "M10",
+      "module_name": "多接触点Kelvin-Voigt柔性模拟器",
+      "priority": "MUST",
+      "description": "两接触点法向力守恒",
+      "expected_artifact": "ContactTruth和SensorSamples",
+      "critical_failure": "控制器真值泄漏、力变负、摩擦数值爆炸",
+      "research_refs": [
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M10-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M10-R02",
+      "module": "M10",
+      "module_name": "多接触点Kelvin-Voigt柔性模拟器",
+      "priority": "MUST",
+      "description": "无接触时合力为零",
+      "expected_artifact": "ContactTruth和SensorSamples",
+      "critical_failure": "控制器真值泄漏、力变负、摩擦数值爆炸",
+      "research_refs": [
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M10-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M10-R03",
+      "module": "M10",
+      "module_name": "多接触点Kelvin-Voigt柔性模拟器",
+      "priority": "MUST",
+      "description": "摩擦符号与极限正确",
+      "expected_artifact": "ContactTruth和SensorSamples",
+      "critical_failure": "控制器真值泄漏、力变负、摩擦数值爆炸",
+      "research_refs": [
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M10-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M10-R04",
+      "module": "M10",
+      "module_name": "多接触点Kelvin-Voigt柔性模拟器",
+      "priority": "MUST",
+      "description": "控制器不可访问独立真值",
+      "expected_artifact": "ContactTruth和SensorSamples",
+      "critical_failure": "控制器真值泄漏、力变负、摩擦数值爆炸",
+      "research_refs": [
+        "R04",
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M10-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M11-R01",
+      "module": "M11",
+      "module_name": "C0开环C1PI C2导纳 C3门控融合",
+      "priority": "MUST",
+      "description": "C0/C1/C2/C3都能运行完整场景",
+      "expected_artifact": "同条件控制器轨迹和比较图",
+      "critical_failure": "不稳定采样率、积分饱和、C3退化无回退",
+      "research_refs": [
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M11-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M11-R02",
+      "module": "M11",
+      "module_name": "C0开环C1PI C2导纳 C3门控融合",
+      "priority": "MUST",
+      "description": "对照条件与随机种子相同",
+      "expected_artifact": "同条件控制器轨迹和比较图",
+      "critical_failure": "不稳定采样率、积分饱和、C3退化无回退",
+      "research_refs": [
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M11-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M11-R03",
+      "module": "M11",
+      "module_name": "C0开环C1PI C2导纳 C3门控融合",
+      "priority": "MUST",
+      "description": "PI有抗饱和",
+      "expected_artifact": "同条件控制器轨迹和比较图",
+      "critical_failure": "不稳定采样率、积分饱和、C3退化无回退",
+      "research_refs": [
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M11-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M11-R04",
+      "module": "M11",
+      "module_name": "C0开环C1PI C2导纳 C3门控融合",
+      "priority": "MUST",
+      "description": "导纳在指定离散步长不发散",
+      "expected_artifact": "同条件控制器轨迹和比较图",
+      "critical_failure": "不稳定采样率、积分饱和、C3退化无回退",
+      "research_refs": [
+        "R06",
+        "R07"
+      ],
+      "verification_test_id": "T-M11-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M12-R01",
+      "module": "M12",
+      "module_name": "受限偏载估计及不可辨识拒绝",
+      "priority": "MUST",
+      "description": "e叉F退化时UNOBSERVABLE",
+      "expected_artifact": "IdentifiabilityResult",
+      "critical_failure": "同wrench异分布、低可辨识仍纠偏",
+      "research_refs": [
+        "R06",
+        "R07",
+        "AUTO后期摘要"
+      ],
+      "verification_test_id": "T-M12-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M12-R02",
+      "module": "M12",
+      "module_name": "受限偏载估计及不可辨识拒绝",
+      "priority": "MUST",
+      "description": "不同压力分布相同wrench不给伪压力图",
+      "expected_artifact": "IdentifiabilityResult",
+      "critical_failure": "同wrench异分布、低可辨识仍纠偏",
+      "research_refs": [
+        "R06",
+        "R07",
+        "AUTO后期摘要"
+      ],
+      "verification_test_id": "T-M12-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M12-R03",
+      "module": "M12",
+      "module_name": "受限偏载估计及不可辨识拒绝",
+      "priority": "MUST",
+      "description": "未知角与偏移不强行同解",
+      "expected_artifact": "IdentifiabilityResult",
+      "critical_failure": "同wrench异分布、低可辨识仍纠偏",
+      "research_refs": [
+        "R06",
+        "R07",
+        "AUTO后期摘要"
+      ],
+      "verification_test_id": "T-M12-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M12-R04",
+      "module": "M12",
+      "module_name": "受限偏载估计及不可辨识拒绝",
+      "priority": "MUST",
+      "description": "门控失败C3回退C2",
+      "expected_artifact": "IdentifiabilityResult",
+      "critical_failure": "同wrench异分布、低可辨识仍纠偏",
+      "research_refs": [
+        "R06",
+        "R07",
+        "AUTO后期摘要"
+      ],
+      "verification_test_id": "T-M12-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M13-R01",
+      "module": "M13",
+      "module_name": "完整虚拟状态机工作—卸载—离面返程",
+      "priority": "MUST",
+      "description": "完整WORK卸载离面返程",
+      "expected_artifact": "OfflineFSMEvents",
+      "critical_failure": "未经卸载换向、故障仍进入WORK",
+      "research_refs": [
+        "R20",
+        "R21"
+      ],
+      "verification_test_id": "T-M13-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M13-R02",
+      "module": "M13",
+      "module_name": "完整虚拟状态机工作—卸载—离面返程",
+      "priority": "MUST",
+      "description": "卸载未完成无法返程",
+      "expected_artifact": "OfflineFSMEvents",
+      "critical_failure": "未经卸载换向、故障仍进入WORK",
+      "research_refs": [
+        "R20",
+        "R21"
+      ],
+      "verification_test_id": "T-M13-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M13-R03",
+      "module": "M13",
+      "module_name": "完整虚拟状态机工作—卸载—离面返程",
+      "priority": "MUST",
+      "description": "F/T过期触发HOLD",
+      "expected_artifact": "OfflineFSMEvents",
+      "critical_failure": "未经卸载换向、故障仍进入WORK",
+      "research_refs": [
+        "R20",
+        "R21"
+      ],
+      "verification_test_id": "T-M13-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M13-R04",
+      "module": "M13",
+      "module_name": "完整虚拟状态机工作—卸载—离面返程",
+      "priority": "MUST",
+      "description": "异常时没有继续WORK",
+      "expected_artifact": "OfflineFSMEvents",
+      "critical_failure": "未经卸载换向、故障仍进入WORK",
+      "research_refs": [
+        "R20",
+        "R21"
+      ],
+      "verification_test_id": "T-M13-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M14-R01",
+      "module": "M14",
+      "module_name": "质量/异常/禁止硬件门控",
+      "priority": "MUST",
+      "description": "禁止任何真实机器人/相机连接",
+      "expected_artifact": "QualityGateDecisions",
+      "critical_failure": "错误只记录不阻断、调用任何实机API",
+      "research_refs": [
+        "R03",
+        "R06",
+        "R18",
+        "R20"
+      ],
+      "verification_test_id": "T-M14-01",      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M14-R02",
+      "module": "M14",
+      "module_name": "质量/异常/禁止硬件门控",
+      "priority": "MUST",
+      "description": "数据源真实性显式",
+      "expected_artifact": "QualityGateDecisions",
+      "critical_failure": "错误只记录不阻断、调用任何实机API",
+      "research_refs": [
+        "R03",
+        "R06",
+        "R18",
+        "R20"
+      ],
+      "verification_test_id": "T-M14-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M14-R03",
+      "module": "M14",
+      "module_name": "质量/异常/禁止硬件门控",
+      "priority": "MUST",
+      "description": "无审批拒绝接触模拟",
+      "expected_artifact": "QualityGateDecisions",
+      "critical_failure": "错误只记录不阻断、调用任何实机API",
+      "research_refs": [
+        "R03",
+        "R06",
+        "R18",
+        "R20"
+      ],
+      "verification_test_id": "T-M14-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M14-R04",
+      "module": "M14",
+      "module_name": "质量/异常/禁止硬件门控",
+      "priority": "MUST",
+      "description": "输入错误可跨模块传播到FSM",
+      "expected_artifact": "QualityGateDecisions",
+      "critical_failure": "错误只记录不阻断、调用任何实机API",
+      "research_refs": [
+        "R03",
+        "R06",
+        "R18",
+        "R20"
+      ],
+      "verification_test_id": "T-M14-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M15-R01",
+      "module": "M15",
+      "module_name": "合成场景与公平对照、消融和报告",
+      "priority": "MUST",
+      "description": "3入口各正常与失败场景",
+      "expected_artifact": "场景清单/图/对照CSV/失败案例",
+      "critical_failure": "以同一传感器输出冒充独立真值",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R17",
+        "R18"
+      ],
+      "verification_test_id": "T-M15-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M15-R02",
+      "module": "M15",
+      "module_name": "合成场景与公平对照、消融和报告",
+      "priority": "MUST",
+      "description": "多随机种子公平控制对比",
+      "expected_artifact": "场景清单/图/对照CSV/失败案例",
+      "critical_failure": "以同一传感器输出冒充独立真值",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R17",
+        "R18"
+      ],
+      "verification_test_id": "T-M15-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M15-R03",
+      "module": "M15",
+      "module_name": "合成场景与公平对照、消融和报告",
+      "priority": "MUST",
+      "description": "结果图有单位及合成标注",
+      "expected_artifact": "场景清单/图/对照CSV/失败案例",
+      "critical_failure": "以同一传感器输出冒充独立真值",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R17",
+        "R18"
+      ],
+      "verification_test_id": "T-M15-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M15-R04",
+      "module": "M15",
+      "module_name": "合成场景与公平对照、消融和报告",
+      "priority": "MUST",
+      "description": "与强基线差距如实含负结果",
+      "expected_artifact": "场景清单/图/对照CSV/失败案例",
+      "critical_failure": "以同一传感器输出冒充独立真值",
+      "research_refs": [
+        "R02",
+        "R03",
+        "R17",
+        "R18"
+      ],
+      "verification_test_id": "T-M15-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M16-R01",
+      "module": "M16",
+      "module_name": "完整无前端的一键离线交付与重放",
+      "priority": "MUST",
+      "description": "干净环境成功安装",
+      "expected_artifact": "命令/日志/覆盖率/版本Hash",
+      "critical_failure": "某入口仅占位、不可重放、无失败报告",
+      "research_refs": [
+        "全阶段审计"
+      ],
+      "verification_test_id": "T-M16-01",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M16-R02",
+      "module": "M16",
+      "module_name": "完整无前端的一键离线交付与重放",
+      "priority": "MUST",
+      "description": "单命令三入口通跑",
+      "expected_artifact": "命令/日志/覆盖率/版本Hash",
+      "critical_failure": "某入口仅占位、不可重放、无失败报告",
+      "research_refs": [
+        "全阶段审计"
+      ],
+      "verification_test_id": "T-M16-02",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M16-R03",
+      "module": "M16",
+      "module_name": "完整无前端的一键离线交付与重放",
+      "priority": "MUST",
+      "description": "coverage_report逐ID与证据一致",
+      "expected_artifact": "命令/日志/覆盖率/版本Hash",
+      "critical_failure": "某入口仅占位、不可重放、无失败报告",
+      "research_refs": [
+        "全阶段审计"
+      ],
+      "verification_test_id": "T-M16-03",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    },
+    {
+      "id": "M16-R04",
+      "module": "M16",
+      "module_name": "完整无前端的一键离线交付与重放",
+      "priority": "MUST",
+      "description": "源代码和配置hash可重放",
+      "expected_artifact": "命令/日志/覆盖率/版本Hash",
+      "critical_failure": "某入口仅占位、不可重放、无失败报告",
+      "research_refs": [
+        "全阶段审计"
+      ],
+      "verification_test_id": "T-M16-04",
+      "offline_only": true,
+      "status": "NOT_EVALUATED"
+    }
+  ]
+}
